@@ -108,4 +108,5 @@ screenPosition, onScreen = camera.worldToScreen(player_position[0], player_posit
 print(onScreen) # True
 print(screenPosition) # (300, 150)
 ```
-Retorna o calculo de uma posição global(no mundo) convertida para a posição na tela
+Retorna o calculo de uma posição global(no mundo) convertida para a posição na tela e um Boolean
+- Tupla, Booleano (True se estiver na tela[campo de visão], False se estiver fora da tela[campo de visão])
