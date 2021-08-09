@@ -72,3 +72,19 @@ position = camera.relative(position[0], position[1])
 print(position) # (400, 250)
 ```
 Calcula a posição global(no mundo) em relação à posição da Câmera + (Tamanho * AnchorPoint), retorna uma tupla com X e Y
+
+# anchorPoint(anchorX, anchorY)
+```python
+from camera import Camera
+
+width = 600
+height = 300
+
+camera = Camera(width, height)
+
+anchorX = 0.5
+anchorY = 0.5
+
+camera.anchorPoint(anchorX, anchorY) # None
+```
+Define o ponto de ancoragem, o calculo é o seguinte (width * anchorX) (height * anchorY), então 0.5 deixa a posição da câmera no centro da tela
