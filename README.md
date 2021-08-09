@@ -88,3 +88,24 @@ anchorY = 0.5
 camera.anchorPoint(anchorX, anchorY) # None
 ```
 Define o ponto de ancoragem, o calculo é o seguinte (width * anchorX) (height * anchorY), então 0.5 deixa a posição da câmera no centro da tela
+
+# worldToScreen(positionX, positionY)
+```python
+from camera import Camera
+
+width = 600
+height = 300
+
+camera = Camera(width, height)
+camera.anchorPoint(0.5, 0.5)
+
+posX = 0
+posY = 0
+
+player_position = camera.relative(posX, posY) # Retorna uma tupla | (300, 150)
+screenPosition, onScreen = camera.worldToScreen(player_position[0], player_position[1]) # Retorna uma tupla | (300, 150)
+
+print(onScreen) # True
+print(screenPosition) # (300, 150)
+```
+Retorna o calculo de uma posição global(no mundo) convertida para a posição na tela
