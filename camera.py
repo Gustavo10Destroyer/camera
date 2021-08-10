@@ -6,7 +6,7 @@ class Camera:
         self.AnchorY = 0.5
         self.Width = Width
         self.Height = Height
-    
+
     def anchorPoint(self, X, Y):
         self.AnchorX = X
         self.AnchorY = Y
@@ -16,8 +16,8 @@ class Camera:
         self.Y = Y
     
     def worldToScreen(self, X, Y):
-        nX = (X + (self.Width * self.AnchorX)) - (self.Width / 2)
-        nY = (Y + (self.Height * self.AnchorY)) - (self.Height / 2)
+        nX = (X + (self.Width * self.AnchorX)) - (self.Width * self.AnchorX)
+        nY = (Y + (self.Height * self.AnchorY)) - (self.Height * self.AnchorY)
 
         onScreen = False
 
@@ -27,6 +27,6 @@ class Camera:
             onScreen = True
         
         return (nX, nY), onScreen
-
+    
     def relative(self, X, Y):
         return (self.Width * self.AnchorX) + X - self.X, (self.Height * self.AnchorY) + Y - self.Y
