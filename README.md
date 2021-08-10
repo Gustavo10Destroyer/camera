@@ -25,6 +25,9 @@ camera = Camera(pygame)
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode([600, 300])
 
+camera.anchorPoint["x"] = 0.5 # Set X camera point to center
+camera.anchorPoint["y"] = 0.5 # Set Y camera point to center
+
 running = True
 
 COLOR = (0, 255, 0)
