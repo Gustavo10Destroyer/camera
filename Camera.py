@@ -1,5 +1,3 @@
-from Game import Game
-
 def createRect(camera, old_rect):
     def rect(surface, draw_type, *args):
         origin = (args[1].left, args[1].top)
